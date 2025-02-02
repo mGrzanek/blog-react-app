@@ -11,7 +11,7 @@ const SinglePost = ({...post}) => {
                 <Card.Text><b>Author: </b> {post.author}</Card.Text>
                 <Card.Text><b>Published: </b> {post.publishedDate}</Card.Text>
                 <Card.Text>{post.shortDescription}</Card.Text>
-                <Button as={NavLink} to={`/post/:${post.id}`}>Read more</Button>
+                <Button as={NavLink} to={`/post/${post.id}`}>Read more</Button>
                 </Card.Body>
             </Card>
         </Col>
