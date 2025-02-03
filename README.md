@@ -1,3 +1,14 @@
+** blog app **
+This is CRUD app based on React, React-Redux, React-Router, React-Bootstrap and sass. 
+App contains 5 subpages:
+- Home subpage with all posts, 
+- About subpage with description about app,
+- Post subpage with the current article,
+- Add post subpage with a form for adding a new post
+- Edit post subpage with form for edit a post 
+
+https://b57f00f9-78ba-43b0-b7a6-64e2356cba54-00-jzmwugoui8ad.worf.replit.dev/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
