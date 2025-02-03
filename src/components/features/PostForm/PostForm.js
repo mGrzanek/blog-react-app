@@ -1,6 +1,7 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const PostForm = ({ action, actionTxt, ...props }) => {
     const navigate = useNavigate();
@@ -38,6 +39,16 @@ const PostForm = ({ action, actionTxt, ...props }) => {
             </Form>
         </Container>
     );
+}
+
+PostForm.propTypes = {
+    action: PropTypes.func.isRequired,
+    actionTxt: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    publishedDate: PropTypes.string,
+    shortDescription: PropTypes.string,
+    content: PropTypes.string
 }
 
 export default PostForm;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Modal, Button } from "react-bootstrap";
+import PropTypes from 'prop-types';
 
 const ModalPage = ({action, buttonName, content}) => {
     const [show, setShow] = useState(false);
@@ -27,6 +28,12 @@ const ModalPage = ({action, buttonName, content}) => {
             </Modal>
         </>
     );
+}
+
+ModalPage.propTypes = {
+    action: PropTypes.func.isRequired,
+    buttonName: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired
 }
 
 export default ModalPage;
