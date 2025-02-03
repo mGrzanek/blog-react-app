@@ -1,4 +1,4 @@
-#** blog app **
+# ** blog app **
 
 
 This is CRUD app based on React, React-Redux, React-Router, React-Bootstrap and sass. 
