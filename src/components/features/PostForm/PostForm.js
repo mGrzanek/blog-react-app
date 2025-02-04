@@ -2,9 +2,12 @@ import { Container, Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import styles from "./PostForm.module.scss";
+
 
 
 const PostForm = ({ action, actionTxt, ...props }) => {
@@ -31,7 +34,7 @@ const PostForm = ({ action, actionTxt, ...props }) => {
                     <Form.Label>Author</Form.Label>
                     <Form.Control className="mb-2" type="text" placeholder="Enter author" value={author} onChange={e => setAuthor(e.target.value)} required />
                     <Form.Label>Published:</Form.Label>
-                    <Form.Control className="mb-2" type="text" placeholder="Enter date" value={publishedDate} onChange={e => setPublishedDate(e.target.value)} required />
+                    <DatePicker selected={publishedDate} onChange={(date) => setPublishedDate(date)} required />
                 </Form.Group>
                 <Form.Group className="col-12 mb-3" controlId="formTextArea">
                     <Form.Label>Short description:</Form.Label>
