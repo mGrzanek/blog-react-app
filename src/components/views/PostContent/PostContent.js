@@ -6,7 +6,7 @@ const PostContent = ({ title, author, publishedDate, content }) => {
             <h3>{title}</h3>
             <p><b>Author: </b>{author}</p>
             <p><b>Published: </b>{publishedDate}</p>
-            <p>{content}</p>
+            <p dangerouslySetInnerHTML={{ __html: content }} />
         </Col>
     );
 }
