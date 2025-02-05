@@ -1,13 +1,21 @@
 # ** blog app **
 
 
-This is CRUD app based on React, React-Redux, React-Router, React-Bootstrap and sass. 
-App contains 5 subpages:
+This is CRUD app based on React, React-Redux, React-Router, React-Bootstrap, Rect-Hook-Form and React DatePicker and React-Quill plugins. 
+
+
+App contains subpages:
 - Home subpage with all posts, 
 - About subpage with description about app,
 - Post subpage with the current article,
 - Add post subpage with a form for adding a new post
-- Edit post subpage with form for edit a post 
+- Edit post subpage with form for edit a post
+- Categories subpage with list of categories
+- Category subpage with all articles about selected category and form to add new article
+
+To run the application, install the necessary packages using commend 'yarn install'. Then run the program by 'yarn start'.
+
+
 
 https://b57f00f9-78ba-43b0-b7a6-64e2356cba54-00-jzmwugoui8ad.worf.replit.dev/
 

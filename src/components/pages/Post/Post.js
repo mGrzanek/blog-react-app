@@ -19,7 +19,7 @@ const Post = () => {
         <Row className="pt-3">
             <Container className="d-flex justify-content-center">
                 <PostContent {...postData} />
-                <Col xs={2}>
+                <Col xs={4} md={2}>
                     <Button variant="outline-info" className="m-1" as={NavLink} to={`/post/edit/${id}`}>Edit</Button>
                     <ModalPage action={ remove } buttonName="Delete" content="This action will completely remove this post from the app. Are you sure you want to do this?" />
                 </Col>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PostContent = ({ title, author, publishedDate, category, content }) => {
     return (
-        <Col xs={6}>
+        <Col xs={8} md={6}>
             <h3>{title}</h3>
             <p><b>Author: </b>{author}</p>
             <p><b>Published: </b>{dateToString(publishedDate)}</p>
