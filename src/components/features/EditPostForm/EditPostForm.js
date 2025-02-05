@@ -22,6 +22,7 @@ const EditPostForm = () => {
             setValue("title", post.title);
             setValue("author", post.author);
             setValue("publishedDate", post.publishedDate);
+            setValue("category", post.selectedCategory);
             setValue("shortDescription", post.shortDescription);
             setValue("content", post.content);
         }

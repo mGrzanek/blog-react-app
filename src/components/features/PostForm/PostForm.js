@@ -21,7 +21,7 @@ const PostForm = ({ action, actionTxt, ...props }) => {
     const [title, setTitle] = useState(props.title || '');
     const [author, setAuthor] = useState(props.author || '');
     const [publishedDate, setPublishedDate] = useState(props.publishedDate || '');
-    const [selectedCategory, setSelectedCategory] = useState(props.category || '');
+    const [category, setCategory] = useState(props.category || '');
     const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
     const [content, setContent] = useState(props.content || '');
     const [contentError, setContentError] = useState(false);
@@ -33,7 +33,7 @@ const PostForm = ({ action, actionTxt, ...props }) => {
         } else if (!content) {
             setContentError(true);
         } else {
-            action({ title, author, publishedDate, selectedCategory, shortDescription, content });
+            action({ title, author, publishedDate, category, shortDescription, content });
             navigate("/");
         }
     }
@@ -72,11 +72,11 @@ const PostForm = ({ action, actionTxt, ...props }) => {
                     <Form.Select 
                         {...register("category", { required: true, validate: value => value !== "default" })}
                         className="my-2"
-                        value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
                     >
                         <option value="default">Select category...</option>
-                        {categories.map(category => <option key={category.id} value={category.category} >{category.category}</option>)}
+                        {categories.map(categoryName => <option key={categoryName.id} value={categoryName.category} >{categoryName.category}</option>)}
                     </Form.Select>
                     {errors.category && <small className="d-block form-text text-danger mt-2">Category is required</small>}
                 </Form.Group>
