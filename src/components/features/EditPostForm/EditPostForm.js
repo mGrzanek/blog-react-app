@@ -25,7 +25,7 @@ const EditPostForm = () => {
             setValue("shortDescription", post.shortDescription);
             setValue("content", post.content);
         }
-    }, [post, setValue]);
+    }, [post]);
 
     if(!post) return <Navigate to="/" />
     else return(

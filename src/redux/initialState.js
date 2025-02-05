@@ -24,6 +24,20 @@ const initialState = {
             publishedDate: new Date('02-02-2025'),
             author: 'Thomas Smith'
         },
+    ], 
+    categories: [
+        {
+            id: '1',
+            category: 'News'
+        },
+        {
+            id: '2',
+            category: 'Movies'
+        },
+        {
+            id: '3',
+            category: 'Sport'
+        }
     ]
 };
 
