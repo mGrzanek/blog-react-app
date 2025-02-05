@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const CategoryLink = ({ id, category }) => {
     const posts = useSelector(state => getPostByCategory(state, category));
+    
     return(
         <ListGroup.Item 
             className="d-flex justify-content-between align-items-center" 
