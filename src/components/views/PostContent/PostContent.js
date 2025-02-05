@@ -1,5 +1,6 @@
 import { Col } from "react-bootstrap";
 import { dateToString } from "../../../utils/dateToStr";
+import PropTypes from 'prop-types';
 
 const PostContent = ({ title, author, publishedDate, category, content }) => {
     return (
@@ -11,6 +12,14 @@ const PostContent = ({ title, author, publishedDate, category, content }) => {
             <p dangerouslySetInnerHTML={{ __html: content }} />
         </Col>
     );
+}
+
+PostContent.propTypes = {
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    publishedDate: PropTypes.object.isRequired,
+    category: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired
 }
 
 export default PostContent;

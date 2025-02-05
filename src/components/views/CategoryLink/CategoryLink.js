@@ -2,6 +2,7 @@ import { ListGroup, Badge } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { getPostByCategory } from "../../../redux/postsReducer";
 import { useSelector } from "react-redux";
+import PropTypes from 'prop-types';
 
 const CategoryLink = ({ id, category }) => {
     const posts = useSelector(state => getPostByCategory(state, category));
@@ -16,6 +17,11 @@ const CategoryLink = ({ id, category }) => {
             <Badge bg="primary">{posts.length}</Badge>
         </ListGroup.Item>
     );
+}
+
+CategoryLink.propTypes = {
+    id: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
 }
 
 export default CategoryLink;

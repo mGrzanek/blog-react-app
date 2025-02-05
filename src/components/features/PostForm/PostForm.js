@@ -64,14 +64,14 @@ const PostForm = ({ action, actionTxt, ...props }) => {
                     {errors.author && <small className="d-block form-text text-danger mt-2">More than 3 chars required</small>}
                     <Form.Label>Published:</Form.Label>
                     <DatePicker
-                        className="mb-3"
+                        className="mb-2"
                         selected={publishedDate}
                         onChange={(date) => setPublishedDate(date)}
                     />
                     {dateError && <small className="d-block form-text text-danger mt-2">Date is required</small>}
                     <Form.Select 
                         {...register("category", { required: true, validate: value => value !== "default" })}
-                        className="my-2"
+                        className="my-3"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                     >
@@ -111,7 +111,7 @@ PostForm.propTypes = {
     actionTxt: PropTypes.string.isRequired,
     title: PropTypes.string,
     author: PropTypes.string,
-    publishedDate: PropTypes.string,
+    publishedDate: PropTypes.object,
     shortDescription: PropTypes.string,
     content: PropTypes.string
 }

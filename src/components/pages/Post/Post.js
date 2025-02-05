@@ -9,6 +9,7 @@ const Post = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const postData = useSelector(state => getPostById(state, id));
+    
     const remove = e => {
         e.preventDefault();
         dispatch(removePost(postData.id));
