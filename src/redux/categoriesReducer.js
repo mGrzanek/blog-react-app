@@ -1,5 +1,5 @@
 // selectors
-
+export const getAllCategories = ({categories}) => categories;
 
 // actions
 
