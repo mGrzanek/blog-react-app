@@ -37,7 +37,7 @@ describe("Component NavBar", () => {
     it("should render Categories component when click on Categories link", () => {
         render(
             <Provider store={store}>
-                <MemoryRouter initialEntries={["/categories"]}>
+                <MemoryRouter initialEntries={["/"]}>
                     <NavBar />
                     <Routes>
                         <Route path="/categories" element={<Categories />} />
@@ -53,7 +53,7 @@ describe("Component NavBar", () => {
     it("should render About component when click on About link", () => {
         render(
             <Provider store={store}>
-                <MemoryRouter initialEntries={["/about"]}>
+                <MemoryRouter initialEntries={["/"]}>
                     <NavBar />
                     <Routes>
                         <Route path="/about" element={<About />} />
