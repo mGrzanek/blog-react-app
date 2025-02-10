@@ -10,11 +10,13 @@ const Category = () => {
     const currentCategory = convertText(category)
     const postsByCategory = useSelector(state => getPostByCategory(state, currentCategory));
 
-    if(postsByCategory.length === 0) {return( 
-        <>
-            <h2>Category: {currentCategory}</h2>
-            <p className="p-4 text-center">No posts in this category...</p>
-        </>);
+    if(postsByCategory.length === 0) {
+        return( 
+            <>
+                <h2>Category: {currentCategory}</h2>
+                <p className="p-4 text-center">No posts in this category...</p>
+            </>
+        );
     } else return(
         <>
             <h2>Category: {currentCategory}</h2>
