@@ -7,7 +7,7 @@ import SinglePost from "../../views/SinglePost/SinglePost";
 const Home = () => {
     const posts = useSelector(getAllPosts);
     return (
-        <section>
+        <section data-testid="home-section">
             <div className="d-flex justify-content-between">
                 <h1>All posts:</h1>
                 <div>

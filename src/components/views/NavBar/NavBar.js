@@ -7,9 +7,9 @@ const NavBar = () => {
                 <Container>
                     <Navbar.Brand as={NavLink} to="/">Blog.app</Navbar.Brand>      
                     <Nav>
-                        <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-                        <Nav.Link as={NavLink} to="/categories">Categories</Nav.Link>
-                        <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+                        <Nav.Link data-testid="home-link"  as={NavLink} to="/">Home</Nav.Link>
+                        <Nav.Link data-testid="categories-link" as={NavLink} to="/categories">Categories</Nav.Link>
+                        <Nav.Link data-testid="about-link" as={NavLink} to="/about">About</Nav.Link>
                     </Nav>  
                 </Container>   
         </Navbar>

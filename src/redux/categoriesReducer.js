@@ -1,4 +1,4 @@
-import { nanoid } from "nanoid";
+import shortid from "shortid";
 
 // selectors
 export const getAllCategories = ({categories}) => categories;
@@ -12,7 +12,7 @@ export const addCategory = payload => ({ type: ADD_CATEGORY, payload });
 const categoriesReducer = (statePart = [], action) => {
     switch (action.type) {
         case ADD_CATEGORY:
-            return [...statePart, { id: nanoid(), ...action.payload }];
+            return [...statePart, { id: shortid(), ...action.payload }];
         default:
             return statePart;
     };
