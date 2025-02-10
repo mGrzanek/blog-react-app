@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addCategory } from "../../../redux/categoriesReducer";
 import { Button, Form } from "react-bootstrap";
+import { convertText } from "../../../utils/convertText";
 
 
 const FormCategory = () => {
@@ -11,7 +12,7 @@ const FormCategory = () => {
 
     const add = e => {
         e.preventDefault();
-        dispatch(addCategory({category: newCategory}));
+        dispatch(addCategory({category: convertText(newCategory)}));
         setNewCategory('');
     };
 
