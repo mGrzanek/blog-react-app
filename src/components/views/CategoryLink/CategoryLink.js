@@ -10,7 +10,8 @@ const CategoryLink = ({ id, category }) => {
     return(
         <ListGroup.Item 
             className="d-flex justify-content-between align-items-center" 
-            key={id} as={NavLink} 
+            key={id} 
+            as={NavLink} 
             to={`/categories/${(category).toLowerCase()}`}
         >
             {category}

@@ -12,18 +12,18 @@ const Category = () => {
 
     if(postsByCategory.length === 0) {
         return( 
-            <>
+            <div data-testid="category-section">
                 <h2>Category: {currentCategory}</h2>
                 <p data-testid="no-articles" className="p-4 text-center">No posts in this category...</p>
-            </>
+            </div>
         );
     } else return(
-        <>
+        <div data-testid="category-section">
             <h2>Category: {currentCategory}</h2>
             <Row data-testid="category-articles" className="d-flex">
                 {postsByCategory.map(postCategory => <SinglePost key={postCategory.id} {...postCategory} />)}
             </Row>   
-        </>  
+        </div>  
     );
 }
 
