@@ -9,7 +9,7 @@ import EditPost from "./components/pages/EditPost/EditPost.js";
 import Categories from './components/pages/Categories/Categories.js';
 import Category from './components/views/Category/Category.js';
 import NotFound from './components/pages/NotFound/NotFound.js';
-import Footer from './components/views/Footer/Footer.js';
+import FooterPage from './components/views/Footer/Footer.js';
 
 const App = () => {
   return (
@@ -25,7 +25,7 @@ const App = () => {
         <Route path='/categories/:category' element={<Category />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      <FooterPage />
     </Container>
   );
 }

@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../../../redux/store";
-import Categories from "../Categories/Categories";
+import Categories from "./Categories";
 
 
 describe("Categories component", () => {
