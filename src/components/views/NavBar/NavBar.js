@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return(
-        <Navbar bg="primary" variant="dark" className="mt-4 mb-4 rounded justify-content-between">  
+        <Navbar data-testid="navbar-section" bg="primary" variant="dark" className="mt-4 mb-4 rounded justify-content-between">  
                 <Container>
                     <Navbar.Brand as={NavLink} to="/">Blog.app</Navbar.Brand>      
                     <Nav>

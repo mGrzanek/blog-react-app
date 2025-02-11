@@ -17,6 +17,8 @@ describe("Component NavBar", () => {
                 <NavBar />
             </MemoryRouter>
         );
+        const navbarTestId = screen.getByTestId("navbar-section");
+        expect(navbarTestId).toBeInTheDocument();
     });
     it("should render Home component when click on Home link", () => {
         render(

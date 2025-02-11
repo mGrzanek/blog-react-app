@@ -1,4 +1,5 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../../../redux/store";
@@ -13,5 +14,7 @@ describe("EditPost component", () => {
                 </Provider>
             </BrowserRouter>
         );
+        const editPostTitle = screen.getByText("Edit Post");
+        expect(editPostTitle).toBeInTheDocument();
     });
 });

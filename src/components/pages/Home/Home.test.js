@@ -16,6 +16,8 @@ describe("Home component", () => {
                 </Provider>
             </MemoryRouter>
         );
+        const homeTestId = screen.getByTestId("home-section");
+        expect(homeTestId).toBeInTheDocument();
     });
     it("should render AddPost component when user click on 'Add post' button", () => {
         render(
