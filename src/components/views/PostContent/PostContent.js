@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 const PostContent = ({ title, author, publishedDate, category, content }) => {
     return (
         <Col xs={8} md={6}>
-            <h3>{title}</h3>
-            <p><b>Author: </b>{author}</p>
-            <p><b>Published: </b>{dateToString(publishedDate)}</p>
-            <p><b>Category: </b>{category}</p>
-            <p dangerouslySetInnerHTML={{ __html: content }} />
+            <h3 data-testid="post-title">{title}</h3>
+            <p data-testid="post-author"><b>Author: </b>{author}</p>
+            <p data-testid="post-published"><b>Published: </b>{dateToString(publishedDate)}</p>
+            <p data-testid="post-category"><b>Category: </b>{category}</p>
+            <p data-testid="post-content" dangerouslySetInnerHTML={{ __html: content }} />
         </Col>
     );
 }
