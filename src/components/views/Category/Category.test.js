@@ -1,66 +1,36 @@
-/*import { render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom/extend-expect';
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
 import store from "../../../redux/store";
 import Category from "./Category";
-import '@testing-library/jest-dom/extend-expect';
 
-
-describe("Category", () => {
-    // it("should render without crashing", () => {
-    //     render(
-    //         <Provider store={store}>
-    //             <Category />
-    //         </Provider>
-    //     );
-    // });
-    it("should return info about the lack of articles when postsByCategory is empty", () => {
-        const testStore = {
-            posts: [
-                {
-                    id: '2',
-                    title: 'Article II',
-                    shortDescription: 'Lorem ipsum dolor sit amet.',
-                    content: ' Pellentesque vulputate nisl et congue vehicula. Aliquam cursus pharetra pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer semper vestibulum pharetra. Pellentesque vulputate nisl et congue vehicula. Aliquam cursus pharetra pulvinar. Etiam mauris eros, tempus vitae posuere at, maximus eu tellus. Proin in rhoncus lectus. Vivamus vel purus placerat, vestibulum lacus et, tempus lorem. Nam tincidunt congue bibendum. ',
-                    publishedDate: new Date('02-01-2025'),
-                    category: "Movies",
-                    author: 'Amanda Doe'
-                }
-            ]
-          };
-      
+describe("Category component", () => {
+    it("should render without crashing when in selected category some article exist", () => {
         render(
-            <Provider store={{ ...store, getState: () => testStore }}>
-                 <BrowserRouter>
+            <MemoryRouter initialEntries={["/categories/news"]}>
+                <Provider store={store}>
                     <Routes>
-                        <Route path="/category/news" element={<Category />} />
+                        <Route path="/categories/:category" element={<Category />} />
                     </Routes>
-                </BrowserRouter>
-            </Provider>
+                </Provider>
+            </MemoryRouter>
         );
-        render(<Category />);
-        const articlesArea = screen.getByTestId("articlesArea");
-        expect(articlesArea).toHaveTextContent("No posts in this category...");
+        const articlesOfCategory = screen.getByTestId("category-articles");
+        expect(articlesOfCategory).toBeInTheDocument();
     });
-    // it("should return proper articles when postsByCategory is not empty", () => {
-    //     const testStore = {
-    //         posts: [
-    //             {
-    //                 id: '2',
-    //                 title: 'Article II',
-    //                 shortDescription: 'Lorem ipsum dolor sit amet.',
-    //                 content: ' Pellentesque vulputate nisl et congue vehicula. Aliquam cursus pharetra pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer semper vestibulum pharetra. Pellentesque vulputate nisl et congue vehicula. Aliquam cursus pharetra pulvinar. Etiam mauris eros, tempus vitae posuere at, maximus eu tellus. Proin in rhoncus lectus. Vivamus vel purus placerat, vestibulum lacus et, tempus lorem. Nam tincidunt congue bibendum. ',
-    //                 publishedDate: new Date('02-01-2025'),
-    //                 category: "Movies",
-    //                 author: 'Amanda Doe'
-    //             }
-    //         ]
-    //       };
-    //     render(
-    //         <Provider store={{ ...store, getState: () => testStore }}>
-    //             <Category />
-    //         </Provider>
-    //     );
-    // });
-}); */
+    it("should render info about no post when in selected category any article not exist", () => {
+        render(
+            <MemoryRouter initialEntries={["/categories/other-category"]}>
+                <Provider store={store}>
+                    <Routes>
+                        <Route path="/categories/:category" element={<Category />} />
+                    </Routes>
+                </Provider>
+            </MemoryRouter>
+        );
+        const categoryInfo = screen.getByTestId("no-articles");
+        expect(categoryInfo).toBeInTheDocument();
+        expect(categoryInfo).toHaveTextContent("No posts in this category...");
+    });
+});
