@@ -16,7 +16,7 @@ const Post = () => {
     }
     if(!postData) return <Navigate to="/" />
     else return(
-        <Row className="pt-3">
+        <Row data-testid="post-section" className="pt-3">
             <Container className="d-flex justify-content-center">
                 <PostContent {...postData} />
                 <Col xs={4} md={2}>
