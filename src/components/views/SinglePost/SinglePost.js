@@ -8,11 +8,11 @@ const SinglePost = ({title, author, publishedDate, category, shortDescription, i
         <Col xs={12} md={6} lg={4} className="pt-4">
             <Card>
                 <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text><b>Author: </b> {author}</Card.Text>
-                <Card.Text><b>Published: </b> {dateToString(publishedDate)}</Card.Text>
-                <Card.Text><b>Category: </b> {category}</Card.Text>
-                <Card.Text>{shortDescription}</Card.Text>
+                <Card.Title data-testid="singlepost-title">{title}</Card.Title>
+                <Card.Text data-testid="singlepost-author"><b>Author: </b> {author}</Card.Text>
+                <Card.Text data-testid="singlepost-published"><b>Published: </b> {dateToString(publishedDate)}</Card.Text>
+                <Card.Text data-testid="singlepost-category"><b>Category: </b> {category}</Card.Text>
+                <Card.Text data-testid="singlepost-description">{shortDescription}</Card.Text>
                 <Button as={NavLink} to={`/post/${id}`}>Read more</Button>
                 </Card.Body>
             </Card>
