@@ -22,7 +22,7 @@ const ModalPage = ({action, buttonName, content}) => {
                         Close
                     </Button>
                     <Button variant="danger" onClick={action}>
-                        {buttonName}
+                        Accept
                     </Button>
                 </Modal.Footer>
             </Modal>
